@@ -135,6 +135,10 @@ impl TaskManager {
             panic!("All applications completed!");
         }
     }
+    /// 获得当前运行的app
+    pub fn get_current_task(&self)->usize{
+        self.inner.exclusive_access().current_task
+    }
 }
 
 /// Run the first task in task list.
